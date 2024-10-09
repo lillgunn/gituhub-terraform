@@ -5,7 +5,15 @@ terraform {
       version = "4.1.0"
     }
   }
+
+    backend "azurerm" {
+    resource_group_name  = "rg-backend-lgl"
+    storage_account_name = "sabackendlgl7comu4sfl0"
+    container_name       = "scbackendlgl"
+    key                  = "backend.terraform.lglstate"
+  }
 }
+
 
 provider "azurerm" {
   features {
